@@ -1,3 +1,4 @@
+-- creation
 create table Fixtures (
 	MatchNumber int primary key,
 	HomeTeam varchar(20),
@@ -25,6 +26,8 @@ create table points (
 );
 
 select * from teamdetails;
+
+-- other milestones
 
 select count(si_no) from teamdetails;
 
