@@ -1,4 +1,3 @@
--- creation
 create table Fixtures (
 	MatchNumber int primary key,
 	HomeTeam varchar(20),
@@ -8,7 +7,6 @@ create table Fixtures (
 	TeamLost varchar(20),
 	Dummy_Column int
 );
-
 create table TeamDetails (
 	SI_No int primary key,
 	Team_Name varchar(200) not null,
@@ -17,20 +15,14 @@ create table TeamDetails (
 	Home_Ground varchar(200),
 	Dummy_Column int
 );
-
 create table points (
 	Team_Name varchar(20) primary key,
 	no_of_wins int,
 	no_of_loss int,
 	points int
 );
-
 select * from teamdetails;
-
--- other milestones
-
 select count(si_no) from teamdetails;
-
 copy zip_codes FROM 'C:\Users\nsaikj\Downloads\fixtures.txt' DELIMITER ',' CSV
 COPY teamdetails FROM 'C:\Users\nsaikj\Downloads\fixtures.txt' WITH (FORMAT csv);
 
@@ -54,7 +46,6 @@ SELECT TEAM_WON AS TEAM_NAME,COUNT(TEAM_WON) AS NO_OF_WINS FROM FIXTURES
 WHERE TEAM_WON NOT IN (
 	SELECT TEAM_NAME FROM POINTS
 )
-
 GROUP BY TEAM_WON
 HAVING COUNT(TEAM_WON) BETWEEN 6 AND 7
 ORDER BY COUNT(TEAM_WON) DESC
